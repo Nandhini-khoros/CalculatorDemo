@@ -16,7 +16,13 @@ public class Calculator
     }
     public static int div(int a, int b)
     {
-        return a / b;
+        if(b==0)
+        {
+            throw new ArithmeticException();
+        }
+        else {
+            return a / b;
+        }
     }
     public static void main(String args[])
     {
@@ -42,8 +48,10 @@ public class Calculator
                 break;
             }
             case '/': {
-                System.out.println(div(a,b));
-                break;
+
+                    System.out.println(div(a, b));
+                    break;
+
             }
             default:
                 throw new IllegalStateException("Unexpected value: " + g);
